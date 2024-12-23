@@ -29,7 +29,8 @@ select
     margin-left: .5rem;
 }
 
-.equals {
+.equals 
+{
     font-weight: bold;
     font-size: 2rem;
 }
