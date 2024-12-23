@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import './App.css';
 import Heading from './Heading';
 import CurrencyRow from './CurrencyRow';
+import './App.css';
 
 const BASE_URL = 'https://api.exchangeratesapi.io/latest'
 
-function App() {
+function App() 
+{
 	const [currencyOptions, setCurrencyOptions] = useState([])
 	const [fromCurrency, setFromCurrency] = useState()
 	const [toCurrency, setToCurrency] = useState()
@@ -14,10 +15,13 @@ function App() {
 	const [amountInFromCurrency, setAmountInFromCurrency] = useState(true)
 
 	let toAmount, fromAmount
-	if(amountInFromCurrency) {
+	if(amountInFromCurrency) 
+	{
 		fromAmount = amount
 		toAmount = amount * exchangeRate
-	} else {
+	} 
+	else 
+	{
 		toAmount = amount
 		fromAmount = amount / exchangeRate
 	}
@@ -35,19 +39,22 @@ function App() {
 	}, [])
 
 	useEffect(() => {
-		if (fromCurrency != null && toCurrency != null) {
+		if (fromCurrency != null && toCurrency != null) 
+		{
 			fetch(`${BASE_URL}?base=${fromCurrency}&symbols=${toCurrency}`)
 			.then(res => res.json())
 			.then(data => setExchangeRate(data.rates[toCurrency]))
 		}
 	}, [fromCurrency, toCurrency])
 
-	function handleFromAmountChange(e) {
+	function handleFromAmountChange(e) 
+	{
 		setAmount(e.target.value)
 		setAmountInFromCurrency(true)
 	}
 
-	function handleToAmountChange(e) {
+	function handleToAmountChange(e) 
+	{
 		setAmount(e.target.value)
 		setAmountInFromCurrency(false)
 	}
