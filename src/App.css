@@ -1,4 +1,5 @@
-body {
+body 
+{
     background-color: lightseagreen;
     margin:0;
     display: flex;
@@ -7,20 +8,24 @@ body {
     min-height: 100vh;
     text-align-last: center;
 }
-h1,h2 {
+
+h1,h2 
+{
     color: white;
     margin: 0;
     margin-bottom: .5rem;
 }
 
-.input {
+.input 
+{
     border: 1px solid #333;
     border-radius: .3em;
     padding: .25rem;
     width:7em;
 }
 
-select {
+select 
+{
     margin-left: .5rem;
 }
 
